@@ -1,0 +1,237 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "User Management API",
+    "description": "API for user management including registration, login, and protected routes.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "users",
+      "description": "Operations related to users"
+    }
+  ],
+  "paths": {
+    "/spec": {
+      "get": {
+        "tags": ["users"],
+        "summary": "Get API specification",
+        "description": "Returns the Swagger specification for the API",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "API specification",
+            "schema": {
+              "$ref": "#/definitions/Swagger"
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Home",
+        "description": "Returns a simple greeting message",
+        "produces": ["text/html"],
+        "responses": {
+          "200": {
+            "description": "Greeting message",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": ["users"],
+        "summary": "User login",
+        "description": "Logs in a user and returns a JWT token",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "The username of the user"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "The password of the user"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "JWT token",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "type": "string",
+                  "description": "JWT token"
+                },
+                "decode": {
+                  "type": "object",
+                  "description": "Decoded JWT token"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid login credentials"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": ["users"],
+        "summary": "User registration",
+        "description": "Registers a new user",
+        "consumes": ["application/x-www-form-urlencoded"],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "The email address of the user"
+          },
+          {
+            "name": "username",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "The username of the user"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "required": true,
+            "type": "string",
+            "description": "The password of the user"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User registered successfully"
+          },
+          "400": {
+            "description": "Validation errors"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/protected": {
+      "get": {
+        "tags": ["users"],
+        "summary": "Protected route",
+        "description": "Returns a message for verified users",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "produces": ["text/html"],
+        "responses": {
+          "200": {
+            "description": "Greeting message for verified users",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": ["users"],
+        "summary": "Get all users",
+        "description": "Returns a list of all users",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "List of users",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "username": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized access"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Swagger": {
+      "type": "object",
+      "properties": {
+        "swagger": {
+          "type": "string"
+        },
+        "info": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          }
+        },
+        "paths": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "bearerAuth": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}
