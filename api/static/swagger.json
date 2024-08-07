@@ -14,22 +14,6 @@
     }
   ],
   "paths": {
-    "/spec": {
-      "get": {
-        "tags": ["users"],
-        "summary": "Get API specification",
-        "description": "Returns the Swagger specification for the API",
-        "produces": ["application/json"],
-        "responses": {
-          "200": {
-            "description": "API specification",
-            "schema": {
-              "$ref": "#/definitions/Swagger"
-            }
-          }
-        }
-      }
-    },
     "/": {
       "get": {
         "summary": "Home",
