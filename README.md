@@ -1,4 +1,6 @@
-Setup Project
+<img src="./api/static/logo.png" alt="Logo of the project" align="right">
+
+# Flask - Rest API
 
 ## Railway deployment
 
@@ -35,9 +37,17 @@ source env/bin/activate
  env/Scripts/activate.bat //In CMD
  env/Scripts/Activate.ps1 //In Powershel
 ```
-6. Install required dependency
+
+5. Install required dependencies
+   
 ```shell
 pip install -r requirements.txt
+```
+
+6. Run flask app
+   
+```shell
+flask --app main run
 ```
 
 Here you should say what actually happens when you execute the code above.
