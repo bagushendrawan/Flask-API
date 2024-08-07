@@ -1,12 +1,28 @@
-<img src="./api/static/logo.png" alt="Logo of the project" align="right">
+<img src="./api/static/logo.png" alt="Logo of the project" align="right" width=64 height=64>
 
 # Flask - Rest API
+
+## Github Repository
+
+```shell
+https://github.com/bagushendrawan/Flask-API
+```
 
 ## Railway deployment
 
 ```shell
-[commands here](https://flask-api-production-6584.up.railway.app/)
+https://flask-api-production-6584.up.railway.app/
 ```
+
+## Swagger API Documentation
+
+```shell
+https://flask-api-production-6584.up.railway.app/swagger
+```
+
+![image](https://github.com/user-attachments/assets/a85943e3-3de6-4013-9b06-eee69d4f450d)
+
+
 
 ## Installing / Getting started
 
@@ -20,11 +36,6 @@ running.
 ```shell
 pip install virtualenv
 python<version> -m venv <virtual-environment-name>
-
-//example
-mkdir projectA
-cd projectA
-python3.8 -m venv env
 ```
 
 4. Run virtual environment
@@ -34,8 +45,8 @@ python3.8 -m venv env
 source env/bin/activate
 
 //Windows
- env/Scripts/activate.bat //In CMD
- env/Scripts/Activate.ps1 //In Powershel
+env/Scripts/activate.bat //In CMD
+env/Scripts/Activate.ps1 //In Powershel
 ```
 
 5. Install required dependencies
@@ -50,4 +61,20 @@ pip install -r requirements.txt
 flask --app main run
 ```
 
+## API Routes
+1. GET (/)
+2. GET (/swagger)
+3. POST (/register)
+4. POST (/login)
+5. *Protected-Bearer GET (/protected)
+6. *Protected-Bearer GET (/users)
+
+
+# Design Summary
+
+## Reason for the design
+
+## Libraries Used
+
+## Challenges
 Here you should say what actually happens when you execute the code above.
