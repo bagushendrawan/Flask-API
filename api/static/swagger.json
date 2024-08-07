@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "User Management API",
-    "description": "API for user management including registration, login, and protected routes.",
+    "title": "Flask API",
+    "description": "API for authentication including registration, login, and protected routes.",
     "version": "1.0.0"
   },
   "host": "localhost:5000",
