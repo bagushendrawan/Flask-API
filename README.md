@@ -130,4 +130,7 @@ WTForms==3.1.2
 <p>My very first challenge for this project is that i have never used python for web development before, which have quite different approach and syntax than using Javascript or Typescript. Because of it, i have to learn from scratch all the framework and library used for this project. Fortunately, it has the same core concepts than Express which helps me quite a lot.</p>
 
 - Design
-<p>I'm quite struggling to decide on how i would build this project. Before using flask, i have tried using Django to complete this test. But to my surprise, it mostly have an built-in functionality provided (which makes me feel bad) and quite lot of initial setup. For that reason, i'm pivotting my decision and start the project from scratch using Flask.</p>
+<p>I'm quite struggling to decide on how i would build this project. Before using flask, i have tried using Django to complete this test. But to my surprise, it mostly have an built-in functionality provided (which makes me feel bad) and quite lot of initial setup which you could found here.</p>
+
+<a href="https://github.com/bagushendrawan/Django-Technical-Test">Django Prototype</a> <br/>
+<p>For that reason, i'm pivotting my decision and start the project from scratch using Flask.</p>
