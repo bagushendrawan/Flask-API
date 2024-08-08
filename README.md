@@ -63,10 +63,14 @@ flask --app main run
 ## API Routes
 1. GET (/) - Hello World Pages
 2. GET (/swagger) - API Documentation
-3. POST (/register) - Register User
-4. POST (/login) - Login User & Get JWT
-5. *Protected-Bearer GET (/protected) - Protected Endpoint Check
-6. *Protected-Bearer GET (/users) - Get All User Registered
+
+(x-www-form-urlencoded)
+4. POST (/register) - Register User
+5. POST (/login) - Login User & Get JWT
+
+(Bearer AUth)
+6. *Protected-Bearer GET (/protected) - Protected Endpoint Check
+7. *Protected-Bearer GET (/users) - Get All User Registered
 
 
 # Design Summary
