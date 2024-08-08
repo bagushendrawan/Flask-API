@@ -9,6 +9,12 @@ A. Reason for the design
   2. Sqlite3
   It's simple built-in databases system, self-contained and require minimal setup.
 
+  3. Werkzeug
+  It's simple security library used for password hashing and check, could be change to other library like bcrypt
+
+  4. WTForms
+  Form & form fields library, used mainly for its validator, could be implemented to frontend if any
+
   As the reason above suggest, my approach to this API design is how it would require minimal setup for the deployment and also met all the criteria required. 
   In addition, my decision for this approach is that would help me to learn more about python web development from the scratch before moving on to High Level Framework like Django.
 
