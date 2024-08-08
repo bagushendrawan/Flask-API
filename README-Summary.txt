@@ -38,8 +38,7 @@ C. Challenges
 
   2. Design
   I'm quite struggling to decide on how i would build this project. Before using flask, i have tried using Django to complete this test. 
-  But to my surprise, it mostly have an built-in functionality provided (which makes me feel bad) and quite lot of initial setup which you could found here.
-
+  But to my surprise, it mostly have an built-in functionality provided (which makes me feel bad) and quite lot of initial setup.
   My Django Prototype Link : 
   https://github.com/bagushendrawan/Django-Technical-Test
 
