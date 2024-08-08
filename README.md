@@ -66,10 +66,10 @@ flask --app main run
 
 4. POST (/register) - Register User
 
-  Body : (x-www-form-urlencoded)
-  - username : Unique, Min=2, Max=20
-  - email : Unique, Valid Email, Max=150
-  - password : Min=8, Max=64
+   Body : (x-www-form-urlencoded)
+   - username : Unique, Min=2, Max=20
+   - email : Unique, Valid Email, Max=150
+   - password : Min=8, Max=64
     
 6. POST (/login) - Login User & Get JWT
 
@@ -80,11 +80,13 @@ flask --app main run
 6. *Protected-Bearer GET (/protected) - Protected Endpoint Check
 
     Headers : (Bearer Auth)
+   <br/>
    "Bearer <token_from_login>
    
 8. *Protected-Bearer GET (/users) - Get All User Registered
 
     Headers : (Bearer Auth)
+   <br/>
    "Bearer <token_from_login>
 
 
