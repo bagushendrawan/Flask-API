@@ -30,7 +30,7 @@ A quick introduction of the minimal setup you need to get a hello world up &
 running.
 
 1. Install Python : https://www.python.org/downloads/
-2. Ensure you have pip installed (it should comes with python packages)
+2. Ensure you have pip installed (it should have comes with python packages)
 3. Create python virtual environment
 
 ```shell
@@ -61,23 +61,37 @@ flask --app main run
 ```
 
 ## API Routes
-1. GET (/)
-2. GET (/swagger)
-3. POST (/register)
-4. POST (/login)
-5. *Protected-Bearer GET (/protected)
-6. *Protected-Bearer GET (/users)
+1. GET (/) - Hello World Pages
+2. GET (/swagger) - API Documentation
+3. POST (/register) - Register User
+4. POST (/login) - Login User & Get JWT
+5. *Protected-Bearer GET (/protected) - Protected Endpoint Check
+6. *Protected-Bearer GET (/users) - Get All User Registered
 
 
 # Design Summary
 
 ## Reason for the design
 
+- Flask
+The main reason i chose Flask as the framework is that they are very minimal & lightweight, much like Express JS. Additionally, it helps me to learn more about Python web development, because you would have to manually set most of the functionality.
+
+- Sqlite3
+It's simple built-in databases system, self-contained and require minimal setup.
+
+As the reason above suggest, my approach to this API design is how it would require minimal setup for the deployment and also met all the criteria required. In addition, my decision for this approach is that would help me to learn more about python web development from the scratch before moving on to High Level Framework like Django.
+
 ## Libraries Used
 
 1. Flask - Framework (Python)
-2. Sqlite3 - Database (flask default)
-3. 
+2. Sqlite3 - Database (flask default database)
+3. Sqlalchemy - Database toolkit and ORM
+4. WTForms - Form & form fields (validator)
+5. Watchdog - Development kit
+6. Werkzeug - Hash Password
+7. PyJWT - JSON Web Token
+8. Swagger - API Documentation
+9. Waitress - Server Railway Deployment
 
 ```shell
 //requirements.txt
@@ -111,4 +125,9 @@ WTForms==3.1.2
 
 
 ## Challenges
-Here you should say what actually happens when you execute the code above.
+
+- Adapt
+<p>My very first challenge for this project is that i have never used python for web development before, which have quite different approach and syntax than using Javascript or Typescript. Because of it, i have to learn from scratch all the framework and library used for this project. Fortunately, it has the same core concepts than Express which helps me quite a lot.</p>
+
+- Design
+<p>I'm quite struggling to decide on how i would build this project. Before using flask, i have tried using Django to complete this test. But to my surprise, it mostly have an built-in functionality provided (which makes me feel bad) and quite lot of initial setup. For that reason, i'm pivotting my decision and start the project from scratch using Flask.</p>
