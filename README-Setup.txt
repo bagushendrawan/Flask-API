@@ -58,7 +58,11 @@ running.
   - username
   - password
 
-(Bearer Auth)
 5. *Protected-Bearer GET (/protected) - Protected Endpoint Check
+    Headers : (Bearer Auth)
+    "Bearer <token_from_login>
+
 6. *Protected-Bearer GET (/users) - Get All User Registered
+    Headers : (Bearer Auth)
+    "Bearer <token_from_login>
 
