@@ -74,10 +74,10 @@ flask --app main run
 ## Reason for the design
 
 - Flask
-The main reason i chose Flask as the framework is that they are very minimal & lightweight, much like Express JS. Additionally, it helps me to learn more about Python web development, because you would have to manually set most of the functionality.
+<p>The main reason i chose Flask as the framework is that they are very minimal & lightweight, much like Express JS. Additionally, it helps me to learn more about Python web development, because you would have to manually set most of the functionality.</p>
 
 - Sqlite3
-It's simple built-in databases system, self-contained and require minimal setup.
+<p>It's simple built-in databases system, self-contained and require minimal setup.</p>
 
 As the reason above suggest, my approach to this API design is how it would require minimal setup for the deployment and also met all the criteria required. In addition, my decision for this approach is that would help me to learn more about python web development from the scratch before moving on to High Level Framework like Django.
 
