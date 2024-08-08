@@ -64,13 +64,28 @@ flask --app main run
 1. GET (/) - Hello World Pages
 2. GET (/swagger) - API Documentation
 
-(x-www-form-urlencoded)
 4. POST (/register) - Register User
-5. POST (/login) - Login User & Get JWT
 
-(Bearer Auth)
+  Body : (x-www-form-urlencoded)
+  - username : Unique, Min=2, Max=20
+  - email : Unique, Valid Email, Max=150
+  - password : Min=8, Max=64
+    
+6. POST (/login) - Login User & Get JWT
+
+   Body : (x-www-form-urlencoded)
+   - username
+   - password
+
 6. *Protected-Bearer GET (/protected) - Protected Endpoint Check
-7. *Protected-Bearer GET (/users) - Get All User Registered
+
+    Headers : (Bearer Auth)
+   "Bearer <token_from_login>
+   
+8. *Protected-Bearer GET (/users) - Get All User Registered
+
+    Headers : (Bearer Auth)
+   "Bearer <token_from_login>
 
 
 # Design Summary
@@ -83,7 +98,13 @@ flask --app main run
 - Sqlite3
 <p>It's simple built-in databases system, self-contained and require minimal setup.</p>
 
-As the reason above suggest, my approach to this API design is how it would require minimal setup for the deployment and also met all the criteria required. In addition, my decision for this approach is that would help me to learn more about python web development from the scratch before moving on to High Level Framework like Django.
+- Werkzeug
+<p>It's simple security library used for password hashing and check, could be change to other library like bcrypt</p>
+
+- WTForms
+<p>Form & form fields library, used mainly for its validator, could be implemented to frontend if any </p>
+
+As the reason above suggest, my approach to this API design is how it would require minimal setup for the deployment and also met all the criteria required. In addition, my decision for this approach is that would help me to learn more about python web development from the scratch before moving on to High Level Framework like Django. *As a notes i have disabled the CSRF token requirement just for this project because of some errors
 
 ## Libraries Used
 
