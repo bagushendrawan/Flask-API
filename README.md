@@ -68,7 +68,7 @@ flask --app main run
 4. POST (/register) - Register User
 5. POST (/login) - Login User & Get JWT
 
-(Bearer AUth)
+(Bearer Auth)
 6. *Protected-Bearer GET (/protected) - Protected Endpoint Check
 7. *Protected-Bearer GET (/users) - Get All User Registered
 
