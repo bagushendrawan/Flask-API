@@ -45,9 +45,18 @@ running.
 1. GET (/) - Hello World Pages
 2. GET (/swagger) - API Documentation
 
-(x-www-form-urlencoded)
 3. POST (/register) - Register User
+
+  (x-www-form-urlencoded)
+  - username : Unique, Min=2, Max=20
+  - email : Unique, Valid Email, Max=150
+  - password : Min=8, Max=64
+  
 4. POST (/login) - Login User & Get JWT
+
+  (x-www-form-urlencoded)
+  - username
+  - password
 
 (Bearer Auth)
 5. *Protected-Bearer GET (/protected) - Protected Endpoint Check
