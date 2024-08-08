@@ -1,11 +1,11 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_wtf.csrf import CSRFProtect
-from os import path,urandom, getenv
+from os import path, getenv
 from flask_swagger_ui import get_swaggerui_blueprint
+from flask_cors import CORS
 
 SWAGGER_URL="/swagger"
-API_URL="/static/swagger.json"
+API_URL="/static/swagger.yaml"
 
 swagger_ui_blueprint = get_swaggerui_blueprint(
     SWAGGER_URL,
@@ -20,7 +20,7 @@ DB_NAME = 'project.db'
 
 def create_app():
     app = Flask(__name__)
-
+    CORS(app)
     from .views import views
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(swagger_ui_blueprint, url_prefix=SWAGGER_URL)
