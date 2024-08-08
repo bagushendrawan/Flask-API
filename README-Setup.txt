@@ -44,8 +44,12 @@ running.
 ## API Routes
 1. GET (/) - Hello World Pages
 2. GET (/swagger) - API Documentation
+
+(x-www-form-urlencoded)
 3. POST (/register) - Register User
 4. POST (/login) - Login User & Get JWT
+
+(Bearer Auth)
 5. *Protected-Bearer GET (/protected) - Protected Endpoint Check
 6. *Protected-Bearer GET (/users) - Get All User Registered
 
